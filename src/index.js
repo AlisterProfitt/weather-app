@@ -1,4 +1,4 @@
 import "./styles.css";
-import { getWeatherByLocation } from "./apiRequest"
+import { getTemperature } from "./apiRequest"
 
-getWeatherByLocation('georgetown')
+getTemperature('georgetown')
