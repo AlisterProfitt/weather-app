@@ -1,4 +1,3 @@
 import "./styles.css";
-import { getTemperature } from "./apiRequest"
-
-getTemperature('georgetown')
+import './apiRequest';
+import './DOM-handler';
