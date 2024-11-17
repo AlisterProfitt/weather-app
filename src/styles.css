@@ -30,3 +30,7 @@ label {
   font-weight: 700;
   color: rgb(255, 255, 255);
 }
+
+input:focus::placeholder {
+  visibility: hidden;
+}
