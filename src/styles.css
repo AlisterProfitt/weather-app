@@ -10,12 +10,20 @@ html {
   margin: 0;
 }
 
+.form-container {
+  height: 20vh;
+  /* outline: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 4vh;
   gap: 1vh;
+  /* outline: 2px solid white; */
 }
 
 input {
@@ -33,4 +41,30 @@ label {
 
 input:focus::placeholder {
   visibility: hidden;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  height: 5vh;
+}
+
+/* Card Design */
+.weather-cards-container {
+  outline: 2px solid gold;
+  height: 75vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card {
+  height: 60%;
+  width: 15%;
+  outline: 2px solid white;
+}
+
+.card.today {
+  height: 80%;
+  width: 25%;
 }
