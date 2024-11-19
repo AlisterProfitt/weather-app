@@ -1,2 +1,3 @@
-import { convertFarenheitToCelcius } from "./farenheitToCelcius";
+import { convertFarenheitToCelcius } from "./temperatureConverter";
+import { convertCelciusToFarenheit } from "./temperatureConverter";
 import { icons } from './Assets/Icons/index'
