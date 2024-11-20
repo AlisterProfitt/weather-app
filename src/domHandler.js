@@ -5,11 +5,14 @@ const form = document.querySelector('form');
 
 form.addEventListener('submit', setCity);
 
-function setCity(e) {
+async function setCity(e) {
     e.preventDefault();
     const city = citySearch.value;
-    getRelevantWeatherData(city)
+    const weatherData = await getRelevantWeatherData(city)
+    console.log(weatherData);
+    return weatherData;
 }
+
 
 /* 
 {

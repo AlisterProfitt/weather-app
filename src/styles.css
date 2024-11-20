@@ -41,10 +41,18 @@ input:focus::placeholder {
   visibility: hidden;
 }
 
+
+/* Header */
 h1 {
   color: white;
   text-align: center;
   height: 5vh;
+  & em {
+    color: rgb(48, 83, 159);
+  }
+  & sup {
+    font-size: 1rem;
+  }
 }
 
 /* Card Design */
