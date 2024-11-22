@@ -1,4 +1,4 @@
 import "./styles.css";
 import './apiRequest';
-import './domHandler';
+import './domManager';
 import './weatherCardsCreator';

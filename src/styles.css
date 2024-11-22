@@ -68,6 +68,7 @@ h1 {
   width: 30%;
   background-color:rgb(53, 116, 171);
   box-shadow: 0px 0px 10px 5px rgb(41, 60, 136);
+  border: 5px solid white;
 }
 
 .date {
@@ -89,10 +90,25 @@ h1 {
   & img {
     width: 40%;
   }
-  & div {
+  & > div {
     color: white;
     font-size: 5em;
   }
+}
+
+div.temperature-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.temperature-container > button {
+  width: 70%;
+  padding: 5px;
+  background-color: rgb(32, 158, 196);
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
 }
 
 .description {
