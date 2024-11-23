@@ -13,10 +13,7 @@ async function getWeatherDataByLocation(location) {
 
 export async function getRelevantWeatherData(location) {
     const data = await getWeatherDataByLocation(location);
-    const week = {};
-    for (let i = 0; i < 3; i += 1) {
-        let { temp: temperature, description, humidity, icon, datetime: date } = data.days[i];
-        week["day" + i] = { temperature, description, humidity, icon, date };
-    }
-    return week;
+    const { temp: temperature, description, humidity, icon, datetime: date } = data.days[0];
+    const today = { temperature, description, humidity, icon, date };
+    return today;
 }
