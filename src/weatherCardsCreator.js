@@ -1,15 +1,27 @@
+import { icons } from "./Assets/Icons/index";
+
+function camelize(string) {
+  let array = string.split("-");
+  let capital = array.map((item, index) =>
+    index
+      ? item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
+      : item.toLowerCase()
+  );
+  return capital.join("");
+}
+
 function createElement(element) {
   return document.createElement(element);
 }
 
 function appendElementToParent(element, parent) {
-  let parentElement = document.querySelector(parent);
+  const parentElement = document.querySelector(parent);
   parentElement.appendChild(element);
 }
 
-function createHeader(country) {
+function createHeader(city) {
   const elem = createElement("h1");
-  elem.textContent = `3 Day Forecast For ${country}`;
+  elem.textContent = `Today's Forecast For ${city.toUpperCase()}`;
   appendElementToParent(elem, "body");
 }
 
@@ -19,47 +31,50 @@ function createWeatherCardsContainer() {
   appendElementToParent(elem, "body");
 }
 
-function createWeatherCard() {
+function createWeatherCard(temperature, humidity, description, date, icon) {
   const elem = createElement("div");
   elem.classList.add("card", "first-card");
   appendElementToParent(elem, "div.weather-cards-container");
-  createDate();
-  createIconContainer();
-  createDescription();
-  createMoreInfo();
+  createDate(date);
+  createIconContainer(temperature, icon);
+  createDescription(description);
+  createMoreInfo(humidity);
 }
 
-function createDate() {
+function createDate(date) {
   const elem = createElement("div");
   elem.classList.add("date");
-  // elem.textContent = date;
+  elem.textContent = date;
   appendElementToParent(elem, "div.first-card");
 }
 
-function createIconContainer() {
+function createIconContainer(temperature, icon) {
   const elem = createElement("div");
   elem.classList.add("container", "icon-container");
   appendElementToParent(elem, "div.first-card");
-  createIconImage();
-  createTemperatureContainer();
+  createIconImage(icon);
+  createTemperatureContainer(temperature);
 }
 
-function createIconImage() {
+function createIconImage(icon) {
   const elem = createElement("img");
+  elem.src = icons[camelize(icon)];
   appendElementToParent(elem, "div.icon-container");
 }
 
-function createTemperatureContainer() {
+function createTemperatureContainer(temperature) {
   const elem = createElement("div");
   elem.classList.add("container", "temperature-container");
   appendElementToParent(elem, "div.icon-container");
-  createTemperatureReading();
+  createTemperatureReading(temperature);
   createTemperatureButton();
 }
 
-function createTemperatureReading() {
+function createTemperatureReading(temperature) {
   const elem = createElement("div");
+  elem.textContent = `${parseInt(temperature)}°F`;
   elem.classList.add("temperature");
+
   appendElementToParent(elem, "div.temperature-container");
 }
 
@@ -70,34 +85,43 @@ function createTemperatureButton() {
   appendElementToParent(elem, "div.temperature-container");
 }
 
-function createDescription() {
+function createDescription(description) {
   const elem = createElement("div");
   elem.classList.add("description");
   appendElementToParent(elem, "div.first-card");
-  createParagraphForDescription();
+  createParagraphForDescription(description);
 }
 
-function createParagraphForDescription() {
+function createParagraphForDescription(description) {
   const elem = createElement("p");
+  elem.textContent = description;
   appendElementToParent(elem, "div.description");
 }
 
-function createMoreInfo() {
+function createMoreInfo(humidity) {
   const elem = createElement("div");
   elem.classList.add("more-info");
   appendElementToParent(elem, "div.first-card");
-  createHumidityForMoreInfo();
+  createHumidityForMoreInfo(humidity);
 }
 
-function createHumidityForMoreInfo() {
+function createHumidityForMoreInfo(humidity) {
   const elem = createElement("p");
+  elem.textContent = `Humidity: ${parseInt(humidity)}%`;
   appendElementToParent(elem, "div.more-info");
 }
 
-function createAllElements() {
-  createHeader();
+function createAllElements(
+  temperature,
+  humidity,
+  description,
+  date,
+  icon,
+  city
+) {
+  createHeader(city);
   createWeatherCardsContainer();
-  createWeatherCard();
+  createWeatherCard(temperature, humidity, description, date, icon);
 }
 
 export { createAllElements };

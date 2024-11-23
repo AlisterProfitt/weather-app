@@ -1,7 +1,6 @@
 import { getRelevantWeatherData } from "./apiRequest";
-import { convertFarenheitToCelcius } from "./temperatureConverter";
-import { convertCelciusToFarenheit } from "./temperatureConverter";
-import { icons } from "./Assets/Icons/index";
+// import { convertFarenheitToCelcius } from "./temperatureConverter";
+// import { convertCelciusToFarenheit } from "./temperatureConverter";
 import { createAllElements } from "./weatherCardsCreator";
 import { createForm } from "./formCreator";
 
@@ -15,15 +14,10 @@ form.addEventListener('submit', setCity);
 async function setCity(e) {
     e.preventDefault();
     const city = citySearch.value;
-    const weatherData = await getRelevantWeatherData(city);
-    console.log(weatherData);
-    createAllElements();    
+    const { humidity, temperature, description, date, icon } = await getRelevantWeatherData(city);
+    console.log(humidity, temperature, description, date, icon);
+    createAllElements(temperature, humidity, description, date, icon, city);    
 }
-
-
-
-
-
 
 
 
