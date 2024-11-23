@@ -6,7 +6,7 @@
     <title>Weather App</title>
 </head>
 <body>
-    <div class="form-container">
+    <div class="container form-container">
         <form>
             <label for="city-search">City:</label>
             <input type="search" name="city-search" id="city-search" placeholder="Please type the name of your city">
@@ -15,31 +15,37 @@
 
     <!-- Mockup for Weather Card -->
     <h1>3 Day Forecast For <em>London</em> <sup>(Example)</sup></h1>
-    <div class="weather-cards-container">
-        <div class="card today">
+    <div class="container weather-cards-container">
+        <div class="card">
             <div class="date">
                 November 18
             </div>
-            <div class="icon-container">
+            <div class="container icon-container">
                 <img src="./Assets/Icons/rain-snow-showers-day.svg" alt="clear-day">
-                <div class="temperature-container">
+                <div class="container temperature-container">
                     <div class="temperature">
                         98°F
                     </div>
-                    <button class="convert">Convert</button>
+                    <button class="convert">
+                        Convert
+                    </button>
                 </div>
             </div>
             <div class="description">
-                <p>Partly cloudy throughout the day with storms possible.</p>
+                <p>
+                    Partly cloudy throughout the day with storms possible.
+                </p>
             </div>
             <div class="more-info">
-                <p>Humidity: 10%</p>
+                <p>
+                    Humidity: 10%
+                </p>
             </div>
         </div>
-        <div class="card tomorrow">
+        <div class="card">
 
         </div>
-        <div class="card day-after-tomorrow">
+        <div class="card">
 
         </div>
     </div>
