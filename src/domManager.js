@@ -1,6 +1,4 @@
 import { getRelevantWeatherData } from "./apiRequest";
-// import { convertFarenheitToCelcius } from "./temperatureConverter";
-// import { convertCelciusToFarenheit } from "./temperatureConverter";
 import { createAllElements } from "./weatherCardsCreator";
 import { createForm } from "./formCreator";
 

@@ -1,4 +1,5 @@
 import { icons } from "./Assets/Icons/index";
+import { convertTemperature } from "./temperatureConverter";
 
 function camelize(string) {
   let array = string.split("-");
@@ -73,15 +74,18 @@ function createTemperatureContainer(temperature) {
 function createTemperatureReading(temperature) {
   const elem = createElement("div");
   elem.textContent = `${parseInt(temperature)}°F`;
+  elem.setAttribute('data-temperature', temperature)
   elem.classList.add("temperature");
-
   appendElementToParent(elem, "div.temperature-container");
 }
 
 function createTemperatureButton() {
   const elem = createElement("button");
-  elem.classList.add("convert");
+  elem.classList.add("convert", "default");
   elem.textContent = "Convert";
+  elem.addEventListener('click', () => {
+    convertTemperature(elem);
+  })
   appendElementToParent(elem, "div.temperature-container");
 }
 
