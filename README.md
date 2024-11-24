@@ -1,2 +1,1 @@
-# webpack-template
-Template for Webpack-based projects
+Weather app. It works fine most of the time, but I still need to handle the errors
